@@ -11,7 +11,7 @@ const getAllCustomers = async () => {
 
 const getCustomerById = async (customerId) => {
   try {
-    const customer = await Customer.findById(customerId);
+    const customer = await Customer.findByPk(customerId);
     return customer;
   } catch (error) {
     throw new Error("Error getting customer by customerId:", error);
