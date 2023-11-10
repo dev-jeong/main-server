@@ -1,0 +1,20 @@
+version: '3'
+services:
+  app:
+    image: main-server:latest
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=1q2w3e4r!
+      - MYSQL_DATABASE=sakila
+
+  db:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=1q2w3e4r!
+    ports:
+      - "3306:3306"
