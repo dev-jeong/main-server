@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const dbClient = require('../DBClient');
+const dbClient = require('../../lib/DBClient');
 
 const Customer = dbClient.define('Customer', {
     customer_id: {

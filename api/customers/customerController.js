@@ -16,7 +16,7 @@ router.get("/v1/customer", async (req, res) => {
 
 // 특정 고객 정보 가져오기
 router.get("/v1/customer/:customerId", async (req, res) => {
-  const customerId = parseInt(req.params.customerId, 10);
+  const customerId = Number(req.params.customerId);
 
   try {
     const customer = await customerService.getCustomerById(customerId);
