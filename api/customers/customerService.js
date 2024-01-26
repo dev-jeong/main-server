@@ -25,7 +25,18 @@ const getCustomerById = async (customerId) => {
   }
 };
 
+const getCustomerByEmail = async (email) => {
+  try {
+    const customer = await Customer.findOne({ where: { email: email } });
+
+    return customer;
+  } catch (error) {
+    throw new Error("Error getting customer by email:", error);
+  }
+};
+
 module.exports = {
   getAllCustomers,
   getCustomerById,
+  getCustomerByEmail,
 };
